@@ -7,7 +7,7 @@ export DH_VERBOSE=1
 override_dh_auto_configure:
 	wget http://ftp.indexdata.dk/pub/support/zorba-3.0.tar.gz
 	tar zxf zorba-3.0.tar.gz
-	cd build; cmake \
+	cd zorba-3.0; mkdir build; cd build; cmake \
 		-Wno-dev \
 		-D CMAKE_INSTALL_PREFIX=/opt/zorba \
 		-D ZORBA_SUPPRESS_SWIG:BOOL=ON \
