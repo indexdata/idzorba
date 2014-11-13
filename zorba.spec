@@ -3,13 +3,14 @@ Summary: XQuery Processor
 Name: zorba
 Version: %{idmetaversion}
 Release: 1.indexdata
+BuildRequires: cmake
 BuildRequires: gcc gcc-c++ pkgconfig
 BuildRequires: wget
 BuildRequires: xerces-c-devel
 BuildRequires: libcurl-devel
-BuildRequires: libedit-devel
 BuildRequires: libxslt-devel
 BuildRequires: bison
+BuildRequires: libuuid-devel
 License: Apache
 Group: Applications/Internet
 Vendor: Index Data ApS <info@indexdata.dk>
@@ -26,22 +27,27 @@ Requires: xerces-c
 
 %prep
 %setup
+rm -fr tmp
+mkdir tmp; cd tmp
+wget http://ftp.indexdata.dk/pub/support/zorba-3.0.tar.gz
+tar zxf zorba-3.0.tar.gz
 
 %build
+cd tmp/zorba-3.0
 mkdir build
 cd build
-/opt/cmake/bin/cmake \
+cmake \
 	-Wno-dev \
 	-D CMAKE_INSTALL_PREFIX=/opt/zorba \
 	-D ZORBA_SUPPRESS_SWIG:BOOL=ON \
 	..
-cd ..
+cd ../../..
 
 %install
-cd build
+cd tmp/zorba-3.0/build
 rm -fr ${RPM_BUILD_ROOT}
 make DESTDIR=${RPM_BUILD_ROOT} install
-cd ..
+cd ../../..
 
 %clean
 rm -fr ${RPM_BUILD_ROOT}
