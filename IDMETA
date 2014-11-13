@@ -1,0 +1,5 @@
+NAME=zorba
+DEBIAN_DIST="jessie wheezy squeeze"
+UBUNTU_DIST="utopic trusty saucy precise"
+CENTOS_DIST="centos6"
+VERSION=3.0
