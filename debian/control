@@ -1,0 +1,21 @@
+Source: zorba
+Section: devel
+Standards-Version: 3.6.2
+Maintainer: Adam Dickmeiss <adam@indexdata.dk>
+Priority: extra
+Build-Depends: debhelper (>= 7),
+	cmake
+	pkg-config,
+	wget,
+	libxerces-c-dev,
+	libcurl4-gnutls-dev,
+	libedit-dev,
+	libxslt1-dev,
+	bison
+
+Package: zorba
+Section: libs
+Architecture: any
+Depends: ${shlibs:Depends}
+Description: runtime and development
+The XQuery Processor developed by the FLWOR Foundation

@@ -1,0 +1,14 @@
+#!/usr/bin/make -f
+export DH_VERBOSE=1
+
+%:
+	dh $@ --without python-support
+
+override_dh_auto_configure:
+	wget http://ftp.indexdata.dk/pub/support/zorba-3.0.tar.gz
+	tar zxf zorba-3.0.tar.gz
+	cd build; cmake \
+		-Wno-dev \
+		-D CMAKE_INSTALL_PREFIX=/opt/zorba \
+		-D ZORBA_SUPPRESS_SWIG:BOOL=ON \
+		..
