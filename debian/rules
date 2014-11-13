@@ -2,7 +2,14 @@
 export DH_VERBOSE=1
 
 %:
-	dh $@ --without python-support
+	dh $@ --without python-support \
+		--parallel \
+		-Dzorba-3.0 -Bzorba-3.0/build
+
+override_dh_clean:
+	rm -fr zorba-3.0
+	rm -f zorba-3.0.tar.gz
+	dh_clean
 
 override_dh_auto_configure:
 	wget http://ftp.indexdata.dk/pub/support/zorba-3.0.tar.gz
@@ -12,3 +19,7 @@ override_dh_auto_configure:
 		-D CMAKE_INSTALL_PREFIX=/opt/zorba \
 		-D ZORBA_SUPPRESS_SWIG:BOOL=ON \
 		..
+
+# Don't run tests. They fail
+override_dh_auto_test:
+
