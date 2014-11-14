@@ -9,7 +9,6 @@ BuildRequires: wget
 BuildRequires: xerces-c-devel
 BuildRequires: libcurl-devel
 BuildRequires: libxslt-devel
-BuildRequires: bison
 BuildRequires: libuuid-devel
 License: Apache
 Group: Applications/Internet
