@@ -1,4 +1,4 @@
-NAME=zorba
+NAME=idzorba
 DEBIAN_DIST="jessie wheezy"
 UBUNTU_DIST="utopic trusty saucy precise"
 CENTOS_DIST="centos6"

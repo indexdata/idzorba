@@ -1,4 +1,4 @@
-Source: zorba
+Source: idzorba
 Section: devel
 Standards-Version: 3.6.2
 Maintainer: Adam Dickmeiss <adam@indexdata.dk>
@@ -12,7 +12,7 @@ Build-Depends: debhelper (>= 7),
 	libxslt1-dev,
 	uuid-dev
 
-Package: zorba
+Package: idzorba
 Section: libs
 Architecture: any
 Depends: ${shlibs:Depends}

@@ -15,7 +15,7 @@ override_dh_auto_configure:
 	cd tmp; tar zxf zorba-3.0.tar.gz
 	cd tmp/zorba-3.0; mkdir build; cd build; cmake \
 		-Wno-dev \
-		-D CMAKE_INSTALL_PREFIX=/opt/zorba \
+		-D CMAKE_INSTALL_PREFIX=/opt/idzorba \
 		-D ZORBA_SUPPRESS_SWIG:BOOL=ON \
 		..
 

@@ -1,6 +1,6 @@
 %define idmetaversion %(. ./IDMETA; printf $VERSION )
 Summary: XQuery Processor
-Name: zorba
+Name: idzorba
 Version: %{idmetaversion}
 Release: 1.indexdata
 BuildRequires: cmake
@@ -13,10 +13,10 @@ BuildRequires: libuuid-devel
 License: Apache
 Group: Applications/Internet
 Vendor: Index Data ApS <info@indexdata.dk>
-Source: zorba-%{version}.tar.gz
+Source: idzorba-%{version}.tar.gz
 BuildRoot: %{_tmppath}/%{name}-%{version}-root
 Packager: Adam Dickmeiss <adam@indexdata.dk>
-URL: http://www.indexdata.com/mp-xquery
+URL: http://www.zorba.io/
 
 %description
 Zorba - The XQuery Processor developed by the FLWOR Foundation
@@ -37,7 +37,7 @@ mkdir build
 cd build
 cmake \
 	-Wno-dev \
-	-D CMAKE_INSTALL_PREFIX=/opt/zorba \
+	-D CMAKE_INSTALL_PREFIX=/opt/idzorba \
 	-D ZORBA_SUPPRESS_SWIG:BOOL=ON \
 	..
 cd ../../..
@@ -53,4 +53,4 @@ rm -fr ${RPM_BUILD_ROOT}
 
 %files
 %defattr(-,root,root)
-/opt/zorba
+/opt/idzorba
