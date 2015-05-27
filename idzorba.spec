@@ -10,6 +10,7 @@ BuildRequires: xerces-c-devel
 BuildRequires: libcurl-devel
 BuildRequires: libxslt-devel
 BuildRequires: libuuid-devel
+BuildRequires: boost-devel
 License: Apache
 Group: Applications/Internet
 Vendor: Index Data ApS <info@indexdata.dk>
