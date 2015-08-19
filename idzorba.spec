@@ -11,6 +11,7 @@ BuildRequires: libcurl-devel
 BuildRequires: libxslt-devel
 BuildRequires: libuuid-devel
 BuildRequires: boost-devel
+BuildRequires: libicu-devel
 License: Apache
 Group: Applications/Internet
 Vendor: Index Data ApS <info@indexdata.dk>
