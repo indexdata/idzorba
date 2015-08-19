@@ -1,5 +1,5 @@
 NAME=idzorba
 DEBIAN_DIST="jessie wheezy"
 UBUNTU_DIST="utopic trusty saucy precise"
-CENTOS_DIST="centos6"
+CENTOS_DIST="centos6 centos7"
 VERSION=3.0
