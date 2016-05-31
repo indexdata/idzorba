@@ -1,19 +1,20 @@
 #!/usr/bin/make -f
 export DH_VERBOSE=1
+TAR=zorba-3.1.d3870d.tar.gz
 
 %:
 	dh $@ --without python-support \
 		--parallel \
-		-Dtmp/zorba-3.0 -Btmp/zorba-3.0/build
+		-Dtmp/zorba-3.1 -Btmp/zorba-3.1/build
 
 override_dh_auto_clean:
 	rm -fr tmp
 	
 override_dh_auto_configure:
 	mkdir -p tmp
-	cd tmp; wget http://ftp.indexdata.dk/pub/support/zorba-3.0.tar.gz
-	cd tmp; tar zxf zorba-3.0.tar.gz
-	cd tmp/zorba-3.0; mkdir build; cd build; cmake \
+	cd tmp; wget http://ftp.indexdata.dk/pub/support/$(TAR)
+	cd tmp; tar zxf $(TAR)
+	cd tmp/zorba-3.1; mkdir build; cd build; cmake \
 		-Wno-dev \
 		-D CMAKE_INSTALL_PREFIX=/opt/idzorba \
 		-D ZORBA_SUPPRESS_SWIG:BOOL=ON \

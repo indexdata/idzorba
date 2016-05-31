@@ -30,11 +30,11 @@ Requires: xerces-c
 %setup
 rm -fr tmp
 mkdir tmp; cd tmp
-wget http://ftp.indexdata.dk/pub/support/zorba-3.0.tar.gz
-tar zxf zorba-3.0.tar.gz
+wget http://ftp.indexdata.dk/pub/support/zorba-3.1.d3870d.tar.gz
+tar zxf zorba-3.1.d3870d.tar.gz
 
 %build
-cd tmp/zorba-3.0
+cd tmp/zorba-3.1
 mkdir build
 cd build
 cmake \
@@ -45,7 +45,7 @@ cmake \
 cd ../../..
 
 %install
-cd tmp/zorba-3.0/build
+cd tmp/zorba-3.1/build
 rm -fr ${RPM_BUILD_ROOT}
 make DESTDIR=${RPM_BUILD_ROOT} install
 cd ../../..
